@@ -35,13 +35,15 @@ namespace Marksheet_Maker_2._0
             this.chooseTemplateLabel = new System.Windows.Forms.Label();
             this.templateCellLocation = new System.Windows.Forms.TextBox();
             this.chooseSaveLocationButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.savePathTextBox = new System.Windows.Forms.TextBox();
             this.startMakerButton = new System.Windows.Forms.Button();
             this.closeToolButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.addFieldButton = new System.Windows.Forms.Button();
             this.dataColumnSelectionComboBox = new System.Windows.Forms.ComboBox();
             this.indicateNameField = new System.Windows.Forms.CheckBox();
+            this.markingDataLabel = new System.Windows.Forms.Label();
+            this.marksheetTemplateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // selectMarkingInfoButton
@@ -99,12 +101,13 @@ namespace Marksheet_Maker_2._0
             this.chooseSaveLocationButton.UseVisualStyleBackColor = true;
             this.chooseSaveLocationButton.Click += new System.EventHandler(this.chooseSaveLocationButton_Click);
             // 
-            // textBox1
+            // savePathTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 400);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 20);
-            this.textBox1.TabIndex = 7;
+            this.savePathTextBox.Location = new System.Drawing.Point(105, 400);
+            this.savePathTextBox.Name = "savePathTextBox";
+            this.savePathTextBox.ReadOnly = true;
+            this.savePathTextBox.Size = new System.Drawing.Size(243, 20);
+            this.savePathTextBox.TabIndex = 7;
             // 
             // startMakerButton
             // 
@@ -145,28 +148,48 @@ namespace Marksheet_Maker_2._0
             // 
             // dataColumnSelectionComboBox
             // 
+            this.dataColumnSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dataColumnSelectionComboBox.FormattingEnabled = true;
             this.dataColumnSelectionComboBox.Location = new System.Drawing.Point(55, 105);
             this.dataColumnSelectionComboBox.Name = "dataColumnSelectionComboBox";
             this.dataColumnSelectionComboBox.Size = new System.Drawing.Size(262, 21);
             this.dataColumnSelectionComboBox.TabIndex = 1;
-            this.dataColumnSelectionComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // indicateNameField
             // 
             this.indicateNameField.AutoSize = true;
+            this.indicateNameField.Checked = true;
+            this.indicateNameField.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.indicateNameField.Enabled = false;
             this.indicateNameField.Location = new System.Drawing.Point(323, 108);
             this.indicateNameField.Name = "indicateNameField";
             this.indicateNameField.Size = new System.Drawing.Size(15, 14);
             this.indicateNameField.TabIndex = 2;
             this.indicateNameField.UseVisualStyleBackColor = true;
-            this.indicateNameField.CheckStateChanged += new System.EventHandler(this.indicateNameField_CheckStateChanged);
+            // 
+            // markingDataLabel
+            // 
+            this.markingDataLabel.AutoSize = true;
+            this.markingDataLabel.Location = new System.Drawing.Point(106, 53);
+            this.markingDataLabel.Name = "markingDataLabel";
+            this.markingDataLabel.Size = new System.Drawing.Size(0, 13);
+            this.markingDataLabel.TabIndex = 11;
+            // 
+            // marksheetTemplateLabel
+            // 
+            this.marksheetTemplateLabel.AutoSize = true;
+            this.marksheetTemplateLabel.Location = new System.Drawing.Point(457, 53);
+            this.marksheetTemplateLabel.Name = "marksheetTemplateLabel";
+            this.marksheetTemplateLabel.Size = new System.Drawing.Size(0, 13);
+            this.marksheetTemplateLabel.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 450);
+            this.Controls.Add(this.marksheetTemplateLabel);
+            this.Controls.Add(this.markingDataLabel);
             this.Controls.Add(this.templateCellLocation);
             this.Controls.Add(this.addFieldButton);
             this.Controls.Add(this.indicateNameField);
@@ -174,14 +197,14 @@ namespace Marksheet_Maker_2._0
             this.Controls.Add(this.dataColumnSelectionComboBox);
             this.Controls.Add(this.closeToolButton);
             this.Controls.Add(this.startMakerButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.savePathTextBox);
             this.Controls.Add(this.chooseSaveLocationButton);
             this.Controls.Add(this.chooseTemplateLabel);
             this.Controls.Add(this.chooseMarkingInfoLabel);
             this.Controls.Add(this.chooseTemplateFileButton);
             this.Controls.Add(this.selectMarkingInfoButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Mark Sheet Maker";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,13 +218,15 @@ namespace Marksheet_Maker_2._0
         private System.Windows.Forms.Label chooseTemplateLabel;
         private System.Windows.Forms.TextBox templateCellLocation;
         private System.Windows.Forms.Button chooseSaveLocationButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox savePathTextBox;
         private System.Windows.Forms.Button startMakerButton;
         private System.Windows.Forms.Button closeToolButton;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button addFieldButton;
         private System.Windows.Forms.ComboBox dataColumnSelectionComboBox;
         private System.Windows.Forms.CheckBox indicateNameField;
+        private System.Windows.Forms.Label markingDataLabel;
+        private System.Windows.Forms.Label marksheetTemplateLabel;
     }
 }
 
