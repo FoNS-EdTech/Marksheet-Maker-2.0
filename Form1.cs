@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -51,11 +52,17 @@ namespace Marksheet_Maker_2._0
             {
                 markingTemplate = new MarksheetTemplate();
                 markingTemplate.file = fileDialog.FileName;
-                marksheetTemplateLabel.Text = fileDialog.SafeFileName;
-                markingTemplate.fileStream = fileDialog.OpenFile();
+                if (!checkIfTemplateOpen(markingTemplate.file))
+                {
+                    DialogResult error = MessageBox.Show("Please close the template file before proceeding.", "Template file open", MessageBoxButtons.OK);
+                }
+                else if (checkIfTemplateOpen(markingTemplate.file))
+                {
+                    markingTemplate.fileStream = fileDialog.OpenFile();
+                    marksheetTemplateLabel.Text = fileDialog.SafeFileName;
+                }
             }
         }
-
         private void addFieldButton_Click(object sender, EventArgs e)
         {
             var combobox = newComboBox();
@@ -162,7 +169,22 @@ namespace Marksheet_Maker_2._0
                 xlApp.Quit();
             }
         }
+        
+        public bool checkIfTemplateOpen(string path)
+        {
+            try
+            {
+                Stream s = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.None);
 
+                s.Close();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         private void closeToolButton_Click(object sender, EventArgs e)
         {
 
