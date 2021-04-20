@@ -18,7 +18,7 @@ namespace Marksheet_Maker_2._0
         public void CSVToMarkingData(string path)
         {
             
-            using (Stream inputStream = File.OpenRead(path))
+            using (Stream inputStream = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 using (ExcelEngine excelEngine = new ExcelEngine())
                 {
