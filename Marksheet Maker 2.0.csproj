@@ -53,10 +53,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>1E1BB701F295E5FA60F1E2C4D62E25BD299A985F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>16E8714CDEFECA27032A2D4F21D5A5118D05BD6D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Marksheet Maker 2.0_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Marksheet Maker 2.0_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -116,6 +116,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Marksheet Maker 2.0_1_TemporaryKey.pfx" />
     <None Include="Marksheet Maker 2.0_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
